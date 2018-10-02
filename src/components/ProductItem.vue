@@ -6,8 +6,8 @@
                     {{ product.Name }}
                     <br><span class="tab">{{ product.Description }}</span>
                 </b-col>
-                <b-col align="right" sm="6">
-                    <b-btn @click="editProduct(product.ProductId)">Edit</b-btn>
+                <b-col sm="6">
+                    <EditProduct :id="product.ProductId" :product="product"/>
                 </b-col>
             </b-row>
         </b-container>
@@ -19,26 +19,20 @@ import bContainer from 'bootstrap-vue/es/components/layout/container'
 import bRow from 'bootstrap-vue/es/components/layout/row'
 import bCol from 'bootstrap-vue/es/components/layout/col'
 import bListGroupItem from 'bootstrap-vue/es/components/list-group/list-group-item'
-import bBtn from 'bootstrap-vue/es/components/button/button'
+import EditProduct from '@/components/EditProduct'
 
 export default {
   name: 'ProductItem',
   components: {
+    EditProduct,
     bContainer,
     bRow,
     bCol,
-    bListGroupItem,
-    bBtn
-  },
+    bListGroupItem},
   props: {
     product: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    editProduct (id) {
-      console.log(id)
     }
   }
 }
