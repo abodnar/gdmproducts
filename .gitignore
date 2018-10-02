@@ -47,4 +47,10 @@ jspm_packages/
 # next.js build output
 .next
 
+# PHPStorm configuration
 .idea
+
+# Built files
+dist/
+
+
