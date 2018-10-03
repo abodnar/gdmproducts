@@ -1,40 +1,25 @@
 <template>
     <div>
-        <select v-model="selected" multiple>
-            <CategoryItem
-                v-for="category in categories"
-                :key="category.CategoryId"
-                :category="category"
-            />
-        </select>
+        <CategoryItem
+            v-for="category in categories"
+            :key="category.CategoryId"
+            :category="category"
+        />
     </div>
 </template>
 
 <script>
 import CategoryItem from '@/components/CategoryItem'
-import {HTTP} from '@/http-common'
-
-const RESOURCE = '/Categories'
 
 export default {
   name: 'Categories',
   components: {
     CategoryItem
   },
-  data () {
-    return {
-      selected: [],
-      categories: []
+  props: {
+    categories: {
+      required: true
     }
-  },
-  created () {
-    HTTP.get(RESOURCE)
-      .then(response => {
-        this.categories = response.data
-      })
-      .catch(error => {
-        console.log(error)
-      })
   }
 }
 </script>

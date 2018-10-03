@@ -1,5 +1,5 @@
 <template>
-    <option v-bind:value="category.CategoryId">{{ category.Name }}</option>
+    <span class="tab">{{ category.Name }}<br></span>
 </template>
 
 <script>
@@ -15,5 +15,7 @@ export default {
 </script>
 
 <style scoped>
-
+    .tab {
+        margin-left: 20px;
+    }
 </style>
