@@ -72,9 +72,6 @@ export default {
           })
       }
       this.showCollapse = !this.showCollapse
-    },
-    isCollapsed () {
-      return this.showCollapse
     }
   },
   props: {
